@@ -1,0 +1,7 @@
+[package]
+name = "cybercon"
+version = "0.1.0"
+authors = ["knoby <maximilian.brinkmann@gmx.net>"]
+
+[dependencies]
+serialport="*"
