@@ -25,9 +25,6 @@ pub fn gen_msg(op: OpCodes, toggle: bool) -> Vec<u8> {
 		//Append Check for current payload
 		msg.push(!*val);
 		//Add payload to checksum
-		println!("{}", *val);
-		println!("{}", check_sum);
-		//Handle Overflow with clousre
 		check_sum = check_sum.wrapping_add(*val);
 	}
 	//Append Checksum
