@@ -28,7 +28,7 @@ pub fn gen_msg(op: OpCodes, toggle: bool) -> Vec<u8> {
 		println!("{}", *val);
 		println!("{}", check_sum);
 		//Handle Overflow with clousre
-		check_sum = check_sum.checked_add(*val).unwrap_or_else(|| val-(255-check_sum)-1);
+		check_sum = check_sum.wrapping_add(*val);
 	}
 	//Append Checksum
 	msg.push(check_sum);
